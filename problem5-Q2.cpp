@@ -7,13 +7,16 @@ class operations{
     int n;
     int * arr;
     public:
-      operations(int array[],int x){
+        operations(int x){
         n=x;
         arr=new int[n];
+}
+    void getarray(){
         for(int i=0;i<n;i++){
-            arr[i]=array[i];
+            cout<<"Enter ELement:"<<(i+1)<<endl;
+            cin>>arr[i];
         }
-      }
+    }
 
     void nextgreater(){
         stack<int>s;
@@ -43,7 +46,8 @@ s.push(i%n);
     cout<<endl;
 
     delete[]res;
-}
+    }
+
 ~operations(){
     delete[] arr;
 }
@@ -51,16 +55,15 @@ s.push(i%n);
 };
 
 int main(){
+// test input 1 2 1
+ operations x(3);
+ x.getarray(); 
+x.nextgreater();  
 
-     int array[]={1,2,1}; // 2 -1 2
-     operations x(array,3);
-     x.nextgreater();
-
- 
-    int arr[]={1,2,3,4,3}; // 2 3 4 -1 4
-    operations y(arr,5);
-    y.nextgreater();
-  
+// test input 1 2 3 4 3
+operations y(5);
+y.getarray();
+y.nextgreater();
    
     return 0;
 }
