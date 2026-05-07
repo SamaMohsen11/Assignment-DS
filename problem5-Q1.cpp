@@ -49,7 +49,7 @@ public:
 
             else if (s[i] == '+' || s[i] == '-') {
 
-                if (lastWasOperator && !st.empty()) {
+                if (lastWasOperator && s[i]=='+') {
                     cout << "Invalid";
                     exit(0);
                 }
